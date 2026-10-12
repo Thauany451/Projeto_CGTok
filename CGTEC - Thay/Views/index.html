@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGTok</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>CGTok</span>
+        </div>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Pesquisar">
+        </div>
+
+        <nav>
+            <a class="active" href="#">
+                <i class="fa-solid fa-house"></i>
+                <span>Para você</span>
+            </a>
+            <a href="#">
+                <i class="fa-regular fa-compass"></i>
+                <span>Explorar</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Seguindo</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-user-friends"></i>
+                <span>Amigos</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-book"></i>
+                <span>Novelas</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-tower-broadcast"></i>
+                <span>LIVE</span>
+            </a>
+            <a href="#">
+                <i class="fa-regular fa-comment"></i>
+                <span>Mensagens</span>
+                <b>3</b>
+            </a>
+            <a href="#">
+                <i class="fa-regular fa-bell"></i>
+                <span>Atividade</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-plus-square"></i>
+                <span>Carregar</span>
+            </a>
+            <a href="#">
+                <i class="fa-regular fa-user"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+
+        <div class="divider"></div>
+
+    </aside>
+
+    <!-- ================= CONTEÚDO ================= -->
+    <main class="main">
+
+        <!-- TOPO -->
+        <header class="topbar">
+            <div class="top-actions">
+                <button>
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    CGTok
+                </button>
+                <div class="profile">👤</div>
+            </div>
+        </header>
+
+        <!-- ================= FEED ================= -->
+        <section class="feed">
+            <article class="video-card">
+
+                <!-- CONTAINER DO VÍDEO -->
+                <div class="video-wrapper">
+
+                    <!-- VÍDEO DENTRO DO WRAPPER -->
+                    <video id="video" autoplay loop playsinline controls>
+                        <source id="video-source" src="videos/gato.mp4" type="video/mp4">
+                    </video>
+
+                    <!-- GRADIENTE -->
+                    <div class="video-gradient"></div>
+
+                    <!-- TEXTO -->
+                    <div class="video-info">
+                        <div class="creator">
+                            <strong id="criador">@cienciafacil</strong>
+                        </div>
+
+                        <p id="descricao">Carregando vídeo...</p>
+
+                        <div class="tags" id="tags">#estudos</div>
+
+                        <div class="music">
+                            <i class="fa-solid fa-music"></i>
+                            <span id="musica">Som original</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= AÇÕES ================= -->
+                <div class="actions">
+                    <div class="action">
+                        <div class="action-avatar">
+                            <span id="avatarAcao">🔬</span>
+                            <span>+</span>
+                        </div>
+                    </div>
+
+                    <!-- CURTIR -->
+                    <div class="action">
+                        <button id="botaoCurtir" onclick="curtir()">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <span id="curtidas">0</span>
+                    </div>
+
+                    <!-- COMENTÁRIO -->
+                    <div class="action">
+                        <button>
+                            <i class="fa-solid fa-comment"></i>
+                        </button>
+                        <span id="comentarios">0</span>
+                    </div>
+
+                    <!-- SALVAR -->
+                    <div class="action">
+                        <button>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </button>
+                        <span>0</span>
+                    </div>
+
+                    <!-- COMPARTILHAR -->
+                    <div class="action">
+                        <button>
+                            <i class="fa-solid fa-share"></i>
+                        </button>
+                        <span>0</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ================= NAVEGAÇÃO ================= -->
+        <div class="feed-navigation">
+            <button onclick="videoAnterior()">
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
+            <button onclick="proximoVideo()">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
