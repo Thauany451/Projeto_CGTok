@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #161823;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 22px 16px;
+    background: white;
+    border-right: 1px solid #eeeeee;
+    z-index: 100;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px 25px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+/* PESQUISA */
+.search-box {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    background: #f1f1f2;
+    border-radius: 24px;
+    margin-bottom: 18px;
+}
+
+.search-box i {
+    color: #777;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    height: 50px;
+    padding: 0 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #161823;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+nav a:hover {
+    background: #f5f5f5;
+}
+
+nav a.active {
+    color: #fe2c55;
+}
+
+nav a i {
+    width: 24px;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav a b {
+    margin-left: auto;
+    background: #fe2c55;
+    color: white;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 10px;
+}
+
+/* DIVISOR */
+.divider {
+    height: 1px;
+    background: #eeeeee;
+    margin: 18px 0;
+}
+
+/* CONTAS */
+.following p {
+    padding: 0 8px 15px;
+    color: #777;
+    font-size: 13px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.account:hover {
+    background: #f5f5f5;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eee;
+    font-size: 19px;
+}
+
+.account strong {
+    display: block;
+    font-size: 13px;
+}
+
+.account small {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* =====================================
+   MAIN & TOPBAR
+===================================== */
+
+.main {
+    margin-left: 240px;
+    min-height: 100vh;
+    position: relative;
+    background: #fff;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    width: calc(100% - 240px);
+    z-index: 50;
+    pointer-events: none;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.top-actions button {
+    border: none;
+    background: white;
+    padding: 11px 15px;
+    border-radius: 22px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+}
+
+.top-actions button i {
+    margin-right: 5px;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* =====================================
+   FEED & VIDEO CARD
+===================================== */
+
+.feed {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 90px 100px 25px;
+}
+
+.video-card {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    height: calc(100vh - 120px);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.video-wrapper {
+    position: relative;
+    width: calc((100vh - 120px) * 9 / 16);
+    height: 100%;
+    max-width: 450px;
+    min-width: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* GRADIENTE SOBRE O VÍDEO */
+.video-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,0.15) 65%,
+        rgba(0,0,0,0.75) 100%
+    );
+    pointer-events: none;
+}
+
+/* INFORMAÇÕES DO VÍDEO */
+.video-info {
+    position: absolute;
+    left: 18px;
+    right: 15px;
+    bottom: 20px;
+    color: white;
+    z-index: 2;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+/*.creator-avatar {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    color: black;
+}*/
+
+.creator strong {
+    font-size: 14px;
+}
+
+.creator button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.video-info p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 7px;
+}
+
+.tags {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.music {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+/* =====================================
+   AÇÕES LATERAIS
+===================================== */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.action button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f1f2;
+    font-size: 21px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.action button i {
+    transition: color 0.2s;
+}
+
+.action button:hover {
+    transform: scale(1.08);
+}
+
+.action span {
+    font-size: 12px;
+    color: #555;
+}
+
+/* AVATAR DE AÇÃO */
+.action-avatar {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eee;
+    font-size: 20px;
+}
+
+.action-avatar span {
+    position: absolute;
+    right: -3px;
+    bottom: -4px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fe2c55;
+    color: white;
+    font-size: 14px;
+}
+
+/* =====================================
+   NAVEGAÇÃO
+===================================== */
+
+.feed-navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feed-navigation button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f1f2;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.feed-navigation button:hover {
+    background: #e5e5e6;
+}
+
+/* CLASSE DE CURTIDA VIA JS */
+#botaoCurtir.liked i {
+    color: #fe2c55;
+}
