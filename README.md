@@ -8,3 +8,11 @@ INSTRUÇÕES PARA O GRUPO:
 Assets - Tudo que é usado na interface (Imagens, vídeos, tipografias, e outros);
 Includes - Trechos de código que podem ser reutilizados em várias partes;
 Views - É onde fica tudo de mais importante do projeto (as páginas).
+
+Tempo de tela (Vídeos) - VALORES
+1 = Menos de 1 hora
+2 = 1 - 2 horas
+3 = 2 - 3 horas
+4 = Mais de 3 horas
+
+Quando for importar o SQL crie um banco com o nome do projeto.

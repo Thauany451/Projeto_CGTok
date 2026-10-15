@@ -10,7 +10,7 @@
 
 <body>
     <div class="intro">
-        <h2>Seja bem-vinde ao</h2>
+        <h2>Seja bem-vindo ao</h2>
         <h1>CGTok</h1>
         <p>A seguir, iniciaremos um breve <br>questionário sobre os vídeos assistidos.<br>Para garantir um controle mais eficiente,<br> realize seu cadastro ou login.</p>
     </div>
@@ -22,27 +22,52 @@
     <dialog id="DialogCadastro">
         <form id="formCad" method="post">
             <h2>Cadastre-se</h2>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" min="4" max="80" required>
+            <div class="linha">
+                <div class="campo">
+                    <label for="nomeCD">Nome:</label>
+                    <input type="text" id="nomeCD" name="nomeCD" required>
+                </div>
+                <div class="campo">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" min="4" max="80" required>
+                </div>
+            </div>
             <fieldset>
-                <legend>Tempo de uso das redes sociais (horas por dia):</legend>
+                <legend>Tempo assistindo vídeos (horas por dia):</legend>
+                <div class="opcao">
                 <input type="radio" id="redes1" name="tempo_redes" value="1" required>
                 <label for="redes1">Menos de 1 hora</label>
+                </div>
+                <div class="opcao">
                 <input type="radio" id="redes2" name="tempo_redes" value="2">
                 <label for="redes2">1 - 2 horas</label>
+                </div>
+                <div class="opcao">
                 <input type="radio" id="redes3" name="tempo_redes" value="3">
                 <label for="redes3">2 - 3 horas</label>
+                </div>
+                <div class="opcao">
                 <input type="radio" id="redes4" name="tempo_redes" value="4">
                 <label for="redes4">3 ou mais horas</label>
+                </div>
             </fieldset>
-            <button type="submit">Cadastrar</button>
-            <button type="button" id="closeCadastro">Fechar</button>
+            <button type="submit" id="cadastrarBtn">Cadastrar</button>
+            <button type="button" id="fecharCadastro">X</button>
+        </form>
+    </dialog>
+    <dialog id="DialogLogin">
+        <form id="formLog" method="post">
+            <h2>Login</h2>
+            <label for="nomeLG">Nome:</label>
+            <input type="text" id="nomeLG" name="nomeLG" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" max="3" required>
+            <button type="submit" id="EntrarBtn">Entrar</button>
+            <button type="button" id="fecharLogin">X</button>
         </form>
     </dialog>
 
     <script src="/Assets/Questionario/JS/login.js"></script>
 </body>
 
-</html>
+</html><!-- Comentário -->
