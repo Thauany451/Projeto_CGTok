@@ -1,3 +1,4 @@
 <?php
-  return ['host' => 'localhost', 'banco' => 'cgtok', 'user' => 'Seu_Usuario', 'senha' => 'Sua_Senha'];
-  // Substitua 'Seu_Usuario' e 'Sua_Senha' pelos valores que utiliza no seu banco de dados.
+  return ['host' => 'localhost', 'banco' => 'cgtok', 'user' => 'root', 'senha' => ''];
+  // Substitua 'root' e senha '' pelos valores que utiliza no seu banco de dados.
+  // XAMPP usa o modelo que está escrito acima.
