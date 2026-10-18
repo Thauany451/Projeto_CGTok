@@ -29,7 +29,7 @@ CREATE TABLE `membros` (
   `senha_hash` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +45,12 @@ CREATE TABLE `participantes` (
   `idade` tinyint(4) NOT NULL,
   `tempo_redes` tinyint(4) NOT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  `tempo_inteligente` int(11) DEFAULT NULL,
+  `tempo_bobo` int(11) DEFAULT NULL,
+  `tempo_slop` int(11) DEFAULT NULL,
+  `acerto_inteligente` int(11) DEFAULT NULL,
+  `acerto_bobo` int(11) DEFAULT NULL,
+  `acerto_slop` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,4 +68,4 @@ CREATE TABLE `participantes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-10-15  0:33:01
+-- Dump completed on 2026-10-18 17:18:27

@@ -16,6 +16,9 @@ if (isset($_POST['cadastrar'])) {
     $stmt->execute();
     
     $_SESSION['participante_id'] = $stmt->insert_id;
+    header("Location: /Views/Video/index.php");
+    exit;
+
     } elseif (isset($_POST['entrar'])) {
         $nomeLG = trim($_POST['nomeLG'] ?? '');
         $senha = ($_POST['senha'] ?? '');
