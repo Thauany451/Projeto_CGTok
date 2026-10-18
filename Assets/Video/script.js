@@ -63,17 +63,64 @@ let videos = [
         tipo: "Cult", // Conteúdo Cult/Útil/Reflexivo
         titulo: "O que PAPEL A4 tem a ver com a RAIZ de 2?",
         criador: "@ManualDoMundo",
-        tags: "#Curisosidades #VocêSabia #PapelA4",
+        tags: "#Curiosidades #VocêSabia #PapelA4",
         musica: "Som original - ManualDoMundo",
         curtidas: "18.5 mil",
         comentarios: "512"
+    },
+    {
+        arquivo: "videos/asmrgizcomgiz.mp4",
+        tipo: "Cult",
+        titulo: "Metade de 1/3?",
+        criador: "@Giscomgiz",
+        tags: "#Fração #Matemática",
+        musica: "Som original - Gis com Giz",
+        curtidas: "6.4 mil",
+        comentarios: "127"
+    },
+    {
+        arquivo: "videos/anawoycick.mp4",
+        tipo: "Cult",
+        titulo:"", 
+        criador: "@AnaWoycick",
+        tags:"",
+        musica: "Som original - Ana Woycick",
+        curtidas: "10.1 mil",
+        comentarios: "500"
+    },
+    {
+        arquivo: "videos/tuntunsahur.mp4",
+        tipo: "Slop",
+        titulo: "OBRIGADO POR ASSISTIR!",
+        criador: "@obrigadoporassistir",
+        tags: "#obrigado #por #assistir",
+        musica: "Som original - obrigadoporassistir",
+        curtidas: "2m",
+        comentarios: "89.7 mil"
     }
+
 ];
 
-let videoAtual = 0;
-//let embaralhar = (array) => array.sort(() => Math.random() - 0.5);
+function embaralharVideos(lista) {
+    const resultado = [...lista];
+    // Separa os videos
+    const meio = resultado.slice(1, -1);
 
+    // Embaralha os videos
+    for (let i = meio.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [meio[i], meio[j]] = [meio[j], meio[i]];
+    }
 
+    // primeiro e ultimo nas posicoes originais
+    return [
+        resultado[0],
+        ...meio,
+        resultado[resultado.length - 1]
+    ];
+}
+
+videos = embaralharVideos(videos);
 
 // ===============================
 // ELEMENTOS DO HTML
@@ -91,6 +138,7 @@ let botaoCurtir = document.getElementById("botaoCurtir");
 // ===============================
 // REGISTRO DE TEMPO DO VÍDEO
 // ===============================
+let videoAtual = 0;
 function registrarTempoAtual() {
     if (!tempoInicioVideo) return;
 
@@ -112,7 +160,6 @@ function mostrarVideo() {
     let atual = videos[videoAtual];
     //let embaralhar = (array) => array.sort(() => Math.random() - 0.5);
 
-    
     videoSource.src = atual.arquivo;
     video.load();
     video.play();
@@ -132,6 +179,31 @@ function mostrarVideo() {
     // Reinicia o cronômetro para o novo vídeo
     tempoInicioVideo = Date.now();
 }
+
+
+const botaoCreditos = document.getElementById("botaoCreditos");
+const painelCreditos = document.getElementById("painelCreditos");
+const fecharCreditos = document.getElementById("fecharCreditos");
+
+let videoEstavaTocando = false;
+
+botaoCreditos.addEventListener("click", function (evento) {
+    evento.preventDefault();
+
+    videoEstavaTocando = !video.paused;
+    video.pause();
+
+    painelCreditos.classList.add("aberto");
+});
+
+fecharCreditos.addEventListener("click", function () {
+    painelCreditos.classList.remove("aberto");
+
+    if (videoEstavaTocando) {
+        video.play().catch(() => {});
+    }
+});
+
 
 // ===============================
 // CONTROLE DE NAVEGAÇÃO

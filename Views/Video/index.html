@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGTok</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../Assets/Video/style.css">
     <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -14,10 +14,11 @@
 
     <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar">
-        <div class="logo">
-            <i class="fa-brands fa-tiktok"></i>
-            <span>CGTok</span>
-        </div>
+
+        <a class="logo" href="./index.html">
+            <img src="img/logo.jfif" alt="Logo do CGTok">
+        </a>
+
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Pesquisar">
@@ -53,6 +54,10 @@
                 <span>Mensagens</span>
                 <b>3</b>
             </a>
+            <a href="#" id="botaoCreditos">
+                <i class="fa-solid fa-users"></i>
+                <span>Créditos</span>
+            </a>
             <a href="#">
                 <i class="fa-regular fa-bell"></i>
                 <span>Atividade</span>
@@ -81,7 +86,11 @@
                     <i class="fa-solid fa-mobile-screen"></i>
                     CGTok
                 </button>
-                <div class="profile">👤</div>
+
+                <div class="profile">
+                    <img src="img/perfil-foto.jpeg" alt="Perfil do CGTok">
+                </div>
+
             </div>
         </header>
 
@@ -161,6 +170,42 @@
             </article>
         </section>
 
+
+        <aside id="painelCreditos" class="painel-creditos">
+            <div class="creditos-cabecalho">
+                <h2>Créditos</h2>
+                <button id="fecharCreditos" aria-label="Fechar créditos">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <p class="creditos-subtitulo">Integrantes do grupo · CGTok</p>
+
+            <div class="lista-integrantes">
+                <div class="integrante">
+                    <img src="img/icondiscord_giu.webp" alt="Integrante 1">
+                    <span>Giulia Rodrigues Andreza Dias</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/icondiscord_isa.webp" alt="Integrante 2">
+                    <span>Isabella Cristina Fernandes da Silva</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/icondiscord_levy.webp" alt="Integrante 3">
+                    <span>Levy Cardoso do Nascimento</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/icondiscord_murilo.webp" alt="Integrante 4">
+                    <span>Murilo Oliveira Andrade</span>
+                </div>
+                <div class="integrante">
+                    <img src="img/icondiscord_thauany.webp" alt="Integrante 5">
+                    <span>Thauany Tereza Fonseca Viana</span>
+                </div>
+            </div>
+        </aside>
+
+
         <!-- ================= NAVEGAÇÃO ================= -->
         <div class="feed-navigation">
             <button onclick="videoAnterior()">
@@ -172,7 +217,7 @@
         </div>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="../../Assets/Video/script.js"></script>
 </body>
 
 </html>
