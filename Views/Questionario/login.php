@@ -16,6 +16,22 @@ if (isset($_POST['cadastrar'])) {
     $stmt->execute();
     
     $_SESSION['participante_id'] = $stmt->insert_id;
+    } elseif (isset($_POST['entrar'])) {
+        $nomeLG = trim($_POST['nomeLG'] ?? '');
+        $senha = ($_POST['senha'] ?? '');
+        
+        $stmt = $conn->prepare("SELECT id, senha_hash FROM membros WHERE nome = ?");
+        $stmt->bind_param("s", $nomeLG);
+        $stmt->execute();
+        $linha = $stmt->get_result()->fetch_assoc();
+
+           if ($linha && password_verify($senha, $linha['senha_hash'])) {
+            session_regenerate_id(true);
+            $_SESSION['membro_id'] = $linha['id'];
+            exit("Logado!");
+        } else {
+            exit("Nome ou senha incorretos.");
+        }
 }
 ?>
 
