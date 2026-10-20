@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Questionário - CGTok</title>
-<style>
-body { font-family: "Times New Roman", serif; font-size: 12pt; line-height: 1.5; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-#caixa { width: 500px; border: 1px solid black; padding: 20px; }
-.alt { display: block; width: 100%; margin-bottom: 8px; padding: 8px; font-family: inherit; font-size: 12pt; text-align: left; }
-.certa { background: green; color: white; }
-.errada { background: red; color: white; }
-</style>
-</head>
-<body>
-<div id="caixa"></div>
-
-<script>
 // fonte: https://github.com/nmatei/simple-quiz-app
 // só copiar e colar um bloco { } para fazer pergunta infinita
-const perguntas = [
-    {
-        texto: "Qual a idade da thay?",
-        certa: "18 já é velha",
-        erradas: ["parece que tem 5", "17 normal", "16 geração alpha"],
-        tipo: "bobo"
-    },
-    {
-        texto: "As perguntas podem ser infinitas?",
-        certa: "podem",
-        erradas: ["não"],
-        tipo: "inteligente"
-    }
-];
 
 // grava no banco 
 const URL_SALVAR = "../../Includes/salvar_dados.php";
@@ -88,6 +57,3 @@ function enviarResultado() {
 }
 
 mostrar();
-</script>
-</body>
-</html>
