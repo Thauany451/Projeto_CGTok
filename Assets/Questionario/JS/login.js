@@ -20,4 +20,17 @@ btnAbrirLogin.addEventListener("click", function () {
 
 btnFecharLogin.addEventListener("click", function () {
     DialogLogin.close();
+
+    //oi deixa eu adicionar meu trava se não as perguntas não são registradas
+
+document.getElementById("formCad").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const dados = {
+        nome: document.getElementById("nomeCD").value,
+        idade: document.getElementById("idade").value,
+        tempo_redes: document.querySelector('input[name="tempo_redes"]:checked').value
+    };
+    sessionStorage.setItem("participante", JSON.stringify(dados));
+    window.location.href = "../Video/index.html";
+});
 });

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/Questionario/CSS/login.css">
+<!--link rel="stylesheet" href="/Assets/Questionario/CSS/login.css" -->
+<link rel="stylesheet" href="../../Assets/Questionario/CSS/login.css">
     <title>Login - CGTEC</title>
 </head>
 
@@ -67,7 +68,12 @@
         </form>
     </dialog>
 
-    <script src="/Assets/Questionario/JS/login.js"></script>
+    <!--<script src="/Assets/Questionario/JS/login.js"></script-->
+    <script src="../../Assets/Questionario/JS/login.js"></script>
+
+
+
+
 </body>
 
 </html><!-- Comentário -->
