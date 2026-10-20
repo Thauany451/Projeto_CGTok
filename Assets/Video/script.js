@@ -221,8 +221,15 @@ function proximoVideo() {
     `
 
     if (interacoes >= limite) {
-        //mostrarResultado(); Aqui ele tá querendo já mostrar os resultados, mas vamos deixar isso para o pós-quiz.
-        mostrarResultado();
+        //mostrarResultado(); Aqui ele tá querendo já mostrar os resultados, mas vamos deixar isso para o pós-quiz. 
+        // PASSANDO POR CIMA 🙄
+        //mostrarResultado();
+sessionStorage.setItem("atencao", JSON.stringify({
+    tempoPorCategoria: tempoPorCategoria,
+    visualizacoesPorCategoria: visualizacoesPorCategoria,
+    tempoTotalSessao: (Date.now() - tempoInicioSessao) / 1000
+}));
+window.location.href = "../Questionario/Perguntas.html";
          //alert(avisoLimite)
         return;
     }

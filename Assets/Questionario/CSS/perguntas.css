@@ -1,0 +1,5 @@
+body { font-family: "Times New Roman", serif; font-size: 12pt; line-height: 1.5; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+#caixa { width: 500px; border: 1px solid black; padding: 20px; }
+.alt { display: block; width: 100%; margin-bottom: 8px; padding: 8px; font-family: inherit; font-size: 12pt; text-align: left; }
+.certa { background: green; color: white; }
+.errada { background: red; color: white; }
