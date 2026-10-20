@@ -2,24 +2,24 @@
 return [
     [
         'id' => 1,
-        'texto' => 'Texto da pergunta?',
-        'alternativas' => ['A' => 'primeira', 'B' => 'segunda', 'C' => 'terceira', 'D' => 'quarta'],
+        'texto' => 'TROQUE: pergunta sobre um vídeo culto',
+        'alternativas' => ['A' => 'Alternativa A', 'B' => 'Alternativa B', 'C' => 'Alternativa C', 'D' => 'Alternativa D'],
         'correta' => 'A',
-        'tipo' => 'Bobo',
-    ],
-    [
-        'id' => 2,
-        'texto' => 'Texto da pergunta?',
-        'alternativas' => ['A' => 'primeira', 'B' => 'segunda', 'C' => 'terceira', 'D' => 'quarta'],
-        'correta' => 'B',
         'tipo' => 'inteligente',
     ],
     [
-        'id' => 3,
-        'texto' => 'Texto da pergunta?',
-        'alternativas' => ['A' => 'primeira', 'B' => 'segunda', 'C' => 'terceira', 'D' => 'quarta'],
+        'id' => 2,
+        'texto' => 'TROQUE: pergunta sobre um vídeo slop',
+        'alternativas' => ['A' => 'Alternativa A', 'B' => 'Alternativa B', 'C' => 'Alternativa C', 'D' => 'Alternativa D'],
         'correta' => 'C',
-        'tipo' => 'Slop',
+        'tipo' => 'slop',
+    ],
+    [
+        'id' => 3,
+        'texto' => 'TROQUE: pergunta sobre um vídeo slop',
+        'alternativas' => ['A' => 'Alternativa A', 'B' => 'Alternativa B', 'C' => 'Alternativa C', 'D' => 'Alternativa D'],
+        'correta' => 'B',
+        'tipo' => 'slop',
     ],
     // Atualizar com as perguntas sobre os vídeos. Os tipos das perguntas não podem mudar, cuidado!
 ];

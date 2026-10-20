@@ -6,7 +6,7 @@
 console.log("SCRIPT DE ANÁLISE DE ATENÇÃO FUNCIONANDO!");
 
 let interacoes = 0;
-let limite = 10; // Número máximo de trocas de vídeo antes do relatório
+let limite = videos.length; // Número máximo de trocas de vídeo antes do relatório
 
 // Marcadores de tempo (timestamps em milissegundos)
 let tempoInicioSessao = Date.now();
@@ -294,13 +294,8 @@ function proximoVideo() {
         //mostrarResultado(); Aqui ele tá querendo já mostrar os resultados, mas vamos deixar isso para o pós-quiz. 
         // PASSANDO POR CIMA 🙄
         alert(avisoLimite); //O Aviso do limite de tempo de tela é importante 🙄
-sessionStorage.setItem("atencao", JSON.stringify({
-    tempoPorCategoria: tempoPorCategoria,
-    visualizacoesPorCategoria: visualizacoesPorCategoria,
-    tempoTotalSessao: (Date.now() - tempoInicioSessao) / 1000
-}));
-window.location.href = "../Questionario/Perguntas.html";
-        
+        mostrarResultado();
+
         return;
     }
 
@@ -373,9 +368,8 @@ ${veredito}
 
     //console.log(relatorio);
     //alert(relatorio);
-}
 
-// =============================== Parte de enviar os dados para o PHP ===============================
+    // =============================== Parte de enviar os dados para o PHP ===============================
 let dadosParaEnviar = {
     tempoTotal: ((Date.now() - tempoInicioSessao) / 1000).toFixed(1),
     tempoSlop: tempoPorCategoria["Slop"].toFixed(1),
@@ -406,7 +400,12 @@ fetch('../../Includes/salvar_dados.php', {
 })
 .catch(error => {
     console.error("Erro ao enviar dados:", error);
+})
+.finally(() => {
+    window.location.href = '/Views/Questionario/questionario.php';
 });
+}
+
 
 // ===============================
 // INICIAR APLICAÇÃO
