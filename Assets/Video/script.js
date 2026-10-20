@@ -29,7 +29,7 @@ let visualizacoesPorCategoria = {
 // ===============================
 let videos = [
     {
-        arquivo: "videos/gato.mp4",
+        arquivo: "../../Assets/Video/videos/gato.mp4",
         tipo: "Slop", // Conteúdo Slop/Fútil
         titulo: "Olha esse gato engraçado! 🐱",
         criador: "@mundoanimal",
@@ -39,7 +39,7 @@ let videos = [
         comentarios: "250"
     },
     {
-        arquivo: "videos/cachorro.mp4",
+        arquivo: "../../Assets/Video/videos/cachorro.mp4",
         tipo: "Slop",
         titulo: "Cachorro de chapéu dançando 🐶",
         criador: "@mundoanimal",
@@ -49,7 +49,7 @@ let videos = [
         comentarios: "98"
     },
     {
-        arquivo: "videos/fonteAmarela.mp4",
+        arquivo: "../../Assets/Video/videos/fonteAmarela.mp4",
         tipo: "Cult", // Conteúdo Cult/Útil/Reflexivo
         titulo: "Reflexão Filosófica sobre o Tempo 🧠",
         criador: "@pensamento_critico",
@@ -59,7 +59,7 @@ let videos = [
         comentarios: "512"
     },
     {
-        arquivo: "videos/ManualDoMundoA4.mp4",
+        arquivo: "../../Assets/Video/videos/ManualDoMundoA4.mp4",
         tipo: "Cult", // Conteúdo Cult/Útil/Reflexivo
         titulo: "O que PAPEL A4 tem a ver com a RAIZ de 2?",
         criador: "@ManualDoMundo",
@@ -69,7 +69,7 @@ let videos = [
         comentarios: "512"
     },
     {
-        arquivo: "videos/asmrgizcomgiz.mp4",
+        arquivo: "../../Assets/Video/videos/asmrgizcomgiz.mp4",
         tipo: "Cult",
         titulo: "Metade de 1/3?",
         criador: "@Giscomgiz",
@@ -79,17 +79,87 @@ let videos = [
         comentarios: "127"
     },
     {
-        arquivo: "videos/anawoycick.mp4",
-        tipo: "Cult",
-        titulo:"", 
+        arquivo: "../../Assets/Video/videos/anawoycick.mp4",
+        tipo: "Slop",
+        titulo:"Você não vai acreditar nisso", 
         criador: "@AnaWoycick",
-        tags:"",
+        tags:"#TaylorSwift #Russia #viral #surpreendente",
         musica: "Som original - Ana Woycick",
         curtidas: "10.1 mil",
         comentarios: "500"
     },
     {
-        arquivo: "videos/tuntunsahur.mp4",
+        arquivo: "../../Assets/Video/videos/cachorrinhorindo.mp4",
+        tipo: "Slop",
+        titulo: "Pra dormir feliz",
+        criador: "@videosfofos238754",
+        tags: "#cachorro #edit #ninar",
+        musica: "Som original - videosfofos238754",
+        curtidas: "1.067",
+        comentarios: "213"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/gatinhodancando.mp4",
+        tipo: "Slop",
+        titulo: "olha oq eu achei na minha cozinhaaaa",
+        criador: "@videossurpreendentes",
+        tags: "#gato #medo #surpreendente",
+        musica: "Som original - videossurpreendentes",
+        curtidas: "1.783",
+        comentarios: "23"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/natalino.mp4",
+        tipo: "Slop",
+        titulo: "O I já tá garantido rsrs",
+        criador: "@VidaDeEstudante",
+        tags: "#Química #Trend #Humor #PapaiNoel #Etec",
+        musica: "Som original - VidaDeEstudante",
+        curtidas: "1.067",
+        comentarios: "213"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/peppacaindo.mp4",
+        tipo: "Slop",
+        titulo: "O George caindo Skskskk",
+        criador: "@VidaDeEstudante",
+        tags: "#GeorgePig #PeppaPig #Quedas",
+        musica: "Som original - VidaDeEstudante",
+        curtidas: "6.750",
+        comentarios: "574"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/rainbowdashbrinquedo.mp4",
+        tipo: "Slop",
+        titulo: "Abrindo o brinquedo da Rainbow Dash de My Litlle Pony",
+        criador: "@AbrindoBrinquedos",
+        tags: "#Brinquedo #Massinha #MLP",
+        musica: "Som original - AbrindoBrinquedos",
+        curtidas: "13.067",
+        comentarios: "749"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/singleladies.mp4",
+        tipo: "Slop",
+        titulo: "Mn e meu cachorro dançando com a gente hahaha",
+        criador: "@dancecomigo",
+        tags: "#cachorro #dança #Beyonce #SingleLadies",
+        musica: "Som original - videosfofos238754",
+        curtidas: "1.067",
+        comentarios: "213"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/sunshine.mp4",
+        tipo: "Slop",
+        titulo: "galniha",
+        criador: "@videosfofos238754",
+        tags: "#bomdia #edit #galinha",
+        musica: "Som original - videosfofos238754",
+        curtidas: "1.894",
+        comentarios: "321"
+    },
+    {
+        arquivo: "../../Assets/Video/videos/tuntunsahur.mp4",
         tipo: "Slop",
         titulo: "OBRIGADO POR ASSISTIR!",
         criador: "@obrigadoporassistir",
@@ -223,14 +293,14 @@ function proximoVideo() {
     if (interacoes >= limite) {
         //mostrarResultado(); Aqui ele tá querendo já mostrar os resultados, mas vamos deixar isso para o pós-quiz. 
         // PASSANDO POR CIMA 🙄
-        //mostrarResultado();
+        alert(avisoLimite); //O Aviso do limite de tempo de tela é importante 🙄
 sessionStorage.setItem("atencao", JSON.stringify({
     tempoPorCategoria: tempoPorCategoria,
     visualizacoesPorCategoria: visualizacoesPorCategoria,
     tempoTotalSessao: (Date.now() - tempoInicioSessao) / 1000
 }));
 window.location.href = "../Questionario/Perguntas.html";
-         //alert(avisoLimite)
+        
         return;
     }
 
