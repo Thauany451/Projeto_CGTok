@@ -294,9 +294,43 @@ function mostrarResultado() {
 ${veredito}
 ========================================`;
 
-    console.log(relatorio);
-    alert(relatorio);
+    //console.log(relatorio);
+    //alert(relatorio);
 }
+
+// =============================== Parte de enviar os dados para o PHP ===============================
+let dadosParaEnviar = {
+    tempoTotal: ((Date.now() - tempoInicioSessao) / 1000).toFixed(1),
+    tempoSlop: tempoPorCategoria["Slop"].toFixed(1),
+    tempoCult: tempoPorCategoria["Cult"].toFixed(1),
+    viewsSlop: visualizacoesPorCategoria["Slop"],
+    viewsCult: visualizacoesPorCategoria["Cult"],
+    totalInteracoes: interacoes,
+
+    mediaSlop: visualizacoesPorCategoria["Slop"] > 0
+        ? (tempoPorCategoria["Slop"] / visualizacoesPorCategoria["Slop"]).toFixed(1)
+        : "0.0",
+    mediaCult: visualizacoesPorCategoria["Cult"] > 0
+        ? (tempoPorCategoria["Cult"] / visualizacoesPorCategoria["Cult"]).toFixed(1)
+        : "0.0"
+};
+
+// Enviando via POST para o arquivo PHP da Thay
+fetch('../../Includes/salvar_dados.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dadosParaEnviar)
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Dados enviados com sucesso para o PHP!", data);
+})
+.catch(error => {
+    console.error("Erro ao enviar dados:", error);
+});
+
 // ===============================
 // INICIAR APLICAÇÃO
 // ===============================
