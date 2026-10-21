@@ -158,6 +158,16 @@ let videos = [
         comentarios: "321"
     },
     {
+        arquivo: "../../Assets/Video/videos/movie.mp4",
+        tipo: "Cult", 
+        titulo: "e ainda tem a galera que usa os dois independente de qual o tipo do filme 🤷🏻‍♀️ ",
+        criador: "@nonofranco",
+        tags: "#filmes #culturapop #curiosidades #cinema",
+        musica: "Som original - nonô franco",
+        curtidas: "23 mil",
+        comentarios: "528"
+    },
+    {
         arquivo: "../../Assets/Video/videos/tuntunsahur.mp4",
         tipo: "Slop",
         titulo: "OBRIGADO POR ASSISTIR!",
