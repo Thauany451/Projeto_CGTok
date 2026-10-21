@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Poppins_bold";
+    src: url("/Assets/Fonts/Poppins-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Poppins_regular";
+    src: url("/Assets/Fonts/Poppins-Regular.ttf");
+    font-weight: 400;
+}
+
+:root {
+    --roxoE: #b279fa;
+    --roxoC: #dcd3eb;
+    --borda: rgb(90, 59, 130);
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--roxoE), var(--roxoE), var(--roxoC));
+    font-family: Poppins_regular, sans-serif;
+    padding: 40px 20px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: Poppins_bold, sans-serif;
+    font-size: 44px;
+    margin-bottom: 30px;
+    text-shadow: -6px 5px 6px var(--borda);
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.card {
+    background-color: #dfeefa;
+    border: 4px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: -10px 10px 20px var(--borda);
+    padding: 24px 28px;
+}
+
+.card h2 {
+    font-family: Poppins_bold, sans-serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+.destaque {
+    font-family: Poppins_bold, sans-serif;
+    font-size: 40px;
+    color: var(--borda);
+}
+
+progress {
+    width: 100%;
+    height: 14px;
+    margin-bottom: 14px;
+}
+progress.culto {
+    accent-color: var(--roxoE);
+}
+progress.slop {
+    accent-color: var(--borda);
+}
+
+@media (max-width: 800px) {
+    .grade {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 32px;
+    }
+}

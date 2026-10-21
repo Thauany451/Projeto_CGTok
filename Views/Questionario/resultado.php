@@ -39,6 +39,8 @@ $pctCulto = $tempoTotal > 0 ? 100 - $pctSlop : 0;
 
 $acertoCulto = (int) $r['acerto_inteligente'];
 $acertoSlop = (int) $r['acerto_slop'];
+$acertoTotal = $acertoCulto + $acertoSlop;
+$totalPerguntas = $totalCulto + $totalSlop;
 
 function formatarTempo($s) {
     return floor($s / 60) . 'min ' . ($s % 60) . 's';
@@ -55,20 +57,26 @@ function formatarTempo($s) {
     <title>Resultado - CGTok</title>
 </head>
 <body>
-    <h1>Seu resultado, <?= htmlspecialchars($r['nome']) ?></h1>
+    <main>
+        <h1>Seu resultado, <?= htmlspecialchars($r['nome']) ?></h1>
 
-    <section>
-        <h2>Tempo assistindo: <?= formatarTempo($tempoTotal) ?></h2>
-        <p>Conteúdo culto: <?= formatarTempo($tempoCulto) ?> (<?= $pctCulto ?>%)</p>
-        <progress value="<?= $pctCulto ?>" max="100"></progress>
-        <p>Conteúdo slop: <?= formatarTempo($tempoSlop) ?> (<?= $pctSlop ?>%)</p>
-        <progress value="<?= $pctSlop ?>" max="100"></progress>
-    </section>
+        <div class="grade">
+            <section class="card">
+                <h2>Tempo assistindo</h2>
+                <p class="destaque"><?= formatarTempo($tempoTotal) ?></p>
+                <p>Conteúdo culto: <?= formatarTempo($tempoCulto) ?> (<?= $pctCulto ?>%)</p>
+                <progress class="culto" value="<?= $pctCulto ?>" max="100"></progress>
+                <p>Conteúdo slop: <?= formatarTempo($tempoSlop) ?> (<?= $pctSlop ?>%)</p>
+                <progress class="slop" value="<?= $pctSlop ?>" max="100"></progress>
+            </section>
 
-    <section>
-        <h2>Seus acertos</h2>
-        <p>Perguntas sobre conteúdo culto: <?= $acertoCulto ?> de <?= $totalCulto ?> (erros: <?= $totalCulto - $acertoCulto ?>)</p>
-        <p>Perguntas sobre conteúdo slop: <?= $acertoSlop ?> de <?= $totalSlop ?> (erros: <?= $totalSlop - $acertoSlop ?>)</p>
-    </section>
+            <section class="card">
+                <h2>Seus acertos</h2>
+                <p class="destaque"><?= $acertoTotal ?> de <?= $totalPerguntas ?></p>
+                <p>Perguntas sobre conteúdo culto: <?= $acertoCulto ?> de <?= $totalCulto ?></p>
+                <p>Perguntas sobre conteúdo slop: <?= $acertoSlop ?> de <?= $totalSlop ?></p>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
