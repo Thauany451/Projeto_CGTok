@@ -403,7 +403,7 @@ fetch('../../Includes/salvar_dados.php', {
     console.error("Erro ao enviar dados:", error);
 })
 .finally(() => {
-    window.location.href = '/Views/Questionario/questionario.php';
+    window.location.href = '../Questionario/questionario.php';
 });
 }
 
