@@ -31,7 +31,8 @@ if (isset($_POST['cadastrar'])) {
            if ($linha && password_verify($senha, $linha['senha_hash'])) {
             session_regenerate_id(true);
             $_SESSION['membro_id'] = $linha['id'];
-            exit("Logado!");
+            header('Location: /Views/Dashboard/dashboard.php');
+            exit;
         } else {
             exit("Nome ou senha incorretos.");
         }

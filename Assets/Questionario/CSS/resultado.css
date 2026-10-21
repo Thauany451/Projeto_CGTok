@@ -37,6 +37,9 @@ h1 {
     font-size: 44px;
     margin-bottom: 30px;
     text-shadow: -6px 5px 6px var(--borda);
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .grade {
@@ -79,6 +82,26 @@ progress.culto {
 }
 progress.slop {
     accent-color: var(--borda);
+}
+
+.sair {
+    width: 60px;
+    height: 50px;
+    border-radius: 20px;
+    border: 4px solid rgb(90, 59, 130);
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: Poppins_bold;
+    font-weight: 700;
+    cursor: pointer;
+    
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    transition: all 0.10s ease-in-out;
+}
+.sair:hover {
+    transform: scale(1.08);
 }
 
 @media (max-width: 800px) {

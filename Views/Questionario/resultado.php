@@ -77,6 +77,8 @@ function formatarTempo($s) {
                 <p>Perguntas sobre conteúdo slop: <?= $acertoSlop ?> de <?= $totalSlop ?></p>
             </section>
         </div>
+        <h1>Obrigado por participar!</h1>
+        <a href="/Includes/sair.php"><button class="sair">Sair</button></a>
     </main>
 </body>
 </html>
