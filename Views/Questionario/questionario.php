@@ -36,6 +36,7 @@ if (isset($_POST['enviar'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,19 +46,29 @@ if (isset($_POST['enviar'])) {
     <title>Questionário - CGTok</title>
 </head>
 <body>
-    <form method="post">
+    <form method="post" id="formQuiz">
+        <div class="topo">
+            <span id="contador">Pergunta 1 de <?= count($perguntas) ?></span>
+            <progress id="barra" value="1" max="<?= count($perguntas) ?>"></progress>
+        </div>
+
         <?php foreach ($perguntas as $p): ?>
-            <fieldset>
-                <legend><?= htmlspecialchars($p['texto']) ?></legend>
+            <div class="pergunta" role="radiogroup" aria-labelledby="titulo_<?= $p['id'] ?>">
+                <h2 id="titulo_<?= $p['id'] ?>"><?= htmlspecialchars($p['texto']) ?></h2>
                 <?php foreach ($p['alternativas'] as $letra => $texto): ?>
-                    <label>
+                    <label class="alternativa">
                         <input type="radio" name="pergunta_<?= $p['id'] ?>" value="<?= $letra ?>" required>
-                        <?= $letra ?>) <?= htmlspecialchars($texto) ?>
+                        <span><?= htmlspecialchars($texto) ?></span>
                     </label>
                 <?php endforeach; ?>
-            </fieldset>
+            </div>
         <?php endforeach; ?>
-        <button type="submit" name="enviar">Enviar respostas</button>
+
+        <div class="botoes">
+            <button type="button" id="proxima" class="btn-quiz">Próxima</button>
+            <button type="submit" name="enviar" id="enviar" class="btn-quiz" hidden>Enviar respostas</button>
+        </div>
     </form>
+    <script src="/Assets/Questionario/JS/questionario.js"></script>
 </body>
 </html>

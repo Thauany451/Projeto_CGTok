@@ -6,7 +6,6 @@
 console.log("SCRIPT DE ANÁLISE DE ATENÇÃO FUNCIONANDO!");
 
 let interacoes = 0;
-let limite = videos.length; // Número máximo de trocas de vídeo antes do relatório
 
 // Marcadores de tempo (timestamps em milissegundos)
 let tempoInicioSessao = Date.now();
@@ -168,14 +167,16 @@ let videos = [
         curtidas: "2m",
         comentarios: "89.7 mil"
     }
-
+    
 ];
+
+let limite = videos.length; // Número máximo de trocas de vídeo antes do relatório
 
 function embaralharVideos(lista) {
     const resultado = [...lista];
     // Separa os videos
     const meio = resultado.slice(1, -1);
-
+    
     // Embaralha os videos
     for (let i = meio.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

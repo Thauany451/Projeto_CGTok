@@ -21,5 +21,12 @@ return [
         'correta' => 'B',
         'tipo' => 'slop',
     ],
+    [
+        'id' => 4,
+        'texto' => 'TROQUE: pergunta sobre um vídeo culto',
+        'alternativas' => ['A' => 'Alternativa A', 'B' => 'Alternativa B', 'C' => 'Alternativa C', 'D' => 'Alternativa D'],
+        'correta' => 'D',
+        'tipo' => 'inteligente',
+    ]
     // Atualizar com as perguntas sobre os vídeos. Os tipos das perguntas não podem mudar, cuidado!
 ];
