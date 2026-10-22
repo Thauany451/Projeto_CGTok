@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['participante_id'])) {
+    header('Location: ../Questionario/login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -15,7 +23,7 @@
     <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar">
 
-        <a class="logo" href="./index.html">
+        <a class="logo" href="./index.php">
             <img src="../../Assets/Video/img/logo.jfif" alt="Logo do CGTok">
         </a>
 

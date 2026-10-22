@@ -3,11 +3,12 @@ session_start();
 require_once __DIR__ . '/../../Includes/conexao.php';
 
 if (!isset($_SESSION['membro_id'])) {
-    header('Location: /Views/Questionario/login.php');
+    header('Location: ../Questionario/login.php');
     exit;
 }
 
-function formatarTempo($s) {
+function formatarTempo($s)
+{
     if ($s === null) {
         return '—';
     }
@@ -15,11 +16,13 @@ function formatarTempo($s) {
     return floor($s / 60) . 'min ' . ($s % 60) . 's';
 }
 
-function pct($acertos, $total) {
+function pct($acertos, $total)
+{
     return ($acertos !== null && $total > 0) ? round($acertos / $total * 100) . '%' : '—';
 }
 
-function fracao($acertos, $total) {
+function fracao($acertos, $total)
+{
     return $acertos === null ? '—' : $acertos . '/' . $total;
 }
 
@@ -65,18 +68,20 @@ $lista = $conn->query(
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/Questionario/CSS/resultado.css">
-    <link rel="stylesheet" href="/Assets/Dashboard/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../Assets/Questionario/CSS/resultado.css">
+    <link rel="stylesheet" href="../../Assets/Dashboard/dashboard.css">
     <title>Dashboard - CGTok</title>
 </head>
+
 <body>
     <main>
         <div class="topo">
             <h1>Dashboard</h1>
-            <a href="/Includes/sair.php"><button class="sair">Sair</button></a>
+            <a href="../../Includes/sair.php"><button class="sairDash">Sair</button></a>
         </div>
 
         <div class="grade">
@@ -106,9 +111,10 @@ $lista = $conn->query(
             </section>
 
             <!-- Quero colocar gráficos aqui -->
+        </div>
 
-            <section class="card largo">
-                <h2>Participantes</h2>
+            <section class="card tabela">
+                <h2>Lista de participantes</h2>
                 <table>
                     <thead>
                         <tr>
@@ -138,7 +144,7 @@ $lista = $conn->query(
                     </tbody>
                 </table>
             </section>
-        </div>
     </main>
 </body>
+
 </html>

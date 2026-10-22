@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/../../Includes/conexao.php';
 
 if (!isset($_SESSION['participante_id'])) {
-    header('Location: /Views/Questionario/login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -16,7 +16,7 @@ $stmt->execute();
 $r = $stmt->get_result()->fetch_assoc();
 
 if (!$r || $r['acerto_slop'] === null) {
-    header('Location: /Views/Questionario/questionario.php');
+    header('Location: questionario.php');
     exit;
 }
 
@@ -53,7 +53,7 @@ function formatarTempo($s) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/Questionario/CSS/resultado.css">
+    <link rel="stylesheet" href="../../Assets/Questionario/CSS/resultado.css">
     <title>Resultado - CGTok</title>
 </head>
 <body>
@@ -78,7 +78,7 @@ function formatarTempo($s) {
             </section>
         </div>
         <h1>Obrigado por participar!</h1>
-        <a href="/Includes/sair.php"><button class="sair">Sair</button></a>
+        <a href="../../Includes/sair.php"><button class="sair">Sair</button></a>
     </main>
 </body>
 </html>

@@ -16,7 +16,7 @@ if (isset($_POST['cadastrar'])) {
     $stmt->execute();
     
     $_SESSION['participante_id'] = $stmt->insert_id;
-    header("Location: /Views/Video/index.php");
+    header("Location: ../Video/index.php");
     exit;
 
     } elseif (isset($_POST['entrar'])) {
@@ -31,7 +31,7 @@ if (isset($_POST['cadastrar'])) {
            if ($linha && password_verify($senha, $linha['senha_hash'])) {
             session_regenerate_id(true);
             $_SESSION['membro_id'] = $linha['id'];
-            header('Location: /Views/Dashboard/dashboard.php');
+            header('Location: ../Dashboard/dashboard.php');
             exit;
         } else {
             exit("Nome ou senha incorretos.");
@@ -53,7 +53,7 @@ if (isset($_POST['cadastrar'])) {
     <div class="intro">
         <h2>Seja bem-vindo ao</h2>
         <h1>CGTok</h1>
-        <p>A seguir, iniciaremos um breve <br>questionário sobre os vídeos assistidos.<br>Para garantir um controle mais eficiente,<br> realize seu cadastro ou login.</p>
+        <p>A seguir, você vai passar por <br>uma experiência sobre vídeos.<br>Para garantir um controle mais eficiente,<br> realize seu cadastro ou login.</p>
     </div>
     <div class="CadLog">
         <button id="cadastroBtn" class="btn">Cadastro</button>
@@ -61,16 +61,16 @@ if (isset($_POST['cadastrar'])) {
     </div>
 
     <dialog id="DialogCadastro">
-        <form id="formCad" method="post">
+        <form id="formCad" method="post" autocomplete="off">
             <h2>Cadastre-se</h2>
             <div class="linha">
                 <div class="campo">
                     <label for="nomeCD">Nome:</label>
-                    <input type="text" id="nomeCD" name="nomeCD" required>
+                    <input type="text" id="nomeCD" name="nomeCD" autocomplete="off" required>
                 </div>
                 <div class="campo">
                     <label for="idade">Idade:</label>
-                    <input type="number" id="idade" name="idade" min="4" max="80" required>
+                    <input type="number" id="idade" name="idade" min="4" max="80" autocomplete="off" required>
                 </div>
             </div>
             <fieldset>

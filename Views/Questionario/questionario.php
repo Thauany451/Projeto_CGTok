@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . '/../../Includes/conexao.php';
 
 if (!isset($_SESSION['participante_id'])) {
-    header('Location: /Views/Questionario/login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ if (isset($_POST['enviar'])) {
     $stmt->bind_param("iii", $acertoCulto, $acertoSlop, $id);
     $stmt->execute();
 
-    header('Location: /Views/Questionario/resultado.php');
+    header('Location: resultado.php');
     exit;
 }
 ?>
@@ -39,12 +39,14 @@ if (isset($_POST['enviar'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/Questionario/CSS/questionario.css">
+    <link rel="stylesheet" href="../../Assets/Questionario/CSS/questionario.css">
     <title>Questionário - CGTok</title>
 </head>
+
 <body>
     <form method="post" id="formQuiz">
         <div class="topo">
@@ -69,6 +71,7 @@ if (isset($_POST['enviar'])) {
             <button type="submit" name="enviar" id="enviar" class="btn-quiz" hidden>Enviar respostas</button>
         </div>
     </form>
-    <script src="/Assets/Questionario/JS/questionario.js"></script>
+    <script src="../../Assets/Questionario/JS/questionario.js"></script>
 </body>
+
 </html>
